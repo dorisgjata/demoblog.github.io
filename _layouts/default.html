@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang }}">  <head>
+    <meta charset="UTF-8">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | strip_html | escape | truncate: 160 | default: site.description }}">
+    <meta name="author" content="{{ page.author | default: site.author }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<header>
+  <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
+</header>
+<body>
+    <header>
+        <h1>{{ page.title | default: site.title }}</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ site.title }} {{ "now" | date: site.date_format }}</p>
+        <div>{{ site.description | default: site.title }}</div>
+    </footer>
+</body>
+</html>
